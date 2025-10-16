@@ -1,0 +1,35 @@
+/* Global reset and matte plaster background */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #3a3a3a;
+  background: #f5f5f4; /* base plaster */
+  background-image:
+    radial-gradient( circle at 20% 15%, rgba(255,255,255,0.75), rgba(255,255,255,0) 40%),
+    radial-gradient( circle at 80% 0%, rgba(255,255,255,0.5), rgba(255,255,255,0) 45%),
+    radial-gradient( circle at 0% 100%, rgba(0,0,0,0.03), rgba(0,0,0,0) 50%),
+    /* subtle noise via embedded data URL (8x8 png) */
+    url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAACXBIWXMAAAsSAAALEgHS3X78AAAAK0lEQVQYV2NkYGD4z0AEMHGACcMZQJwYQG0CkWQHk2gCw2gCw2gQH4oCAAO9IBxz6kJ1iAAAAAElFTkSuQmCC");
+  background-size: auto, auto, auto, 256px 256px;
+  background-blend-mode: soft-light, soft-light, normal, normal;
+}
+
+:root {
+  --plaster: #f5f5f4;
+  --plaster-deep: #e7e7e5;
+  --plaster-highlight: #ffffff;
+  --shadow: rgba(0,0,0,0.25);
+  --shadow-soft: rgba(0,0,0,0.12);
+  --accent: #6b7280; /* neutral accent */
+  --light-x: -24px; /* top-left strong light */
+  --light-y: -24px;
+}
+
+.main-center {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+}
